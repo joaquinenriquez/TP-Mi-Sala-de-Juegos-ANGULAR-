@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, NgModel } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,20 +11,23 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module';
+import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina-el-numero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuPrincipalComponent,
     CarruselComponent,
-    HomeComponent
+    HomeComponent,
+    AdivinaElNumeroComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     LayoutModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
