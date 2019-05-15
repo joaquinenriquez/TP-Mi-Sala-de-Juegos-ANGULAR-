@@ -3,12 +3,14 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>JUEGOS</mat-toolbar>
+    <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#" routerLink="/Velocidad">VELOCIDAD ARTIMÉTICA</a>
-      <a mat-list-item href="#" routerLink="/Piedra">PIEDRA, PAPEL O TIJEARA</a>
-      <a mat-list-item href="#" routerLink="/Adivina">ADIVINA EL NÚMERO SECRETO</a>
-      <a mat-list-item href="#">MI JUEGO</a>
+      <a mat-list-item href="#">Anagrama</a>
+      <a mat-list-item href="#">Piedra, papel o tijera</a>
+      <a mat-list-item href="#">Agilidad Artimética</a>
+      <a mat-list-item href="#">Adivina el número</a>
+      <a mat-list-item href="#">TaTeTi</a>
+      <a mat-list-item href="#">Mi Juego</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,7 +23,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>UTN Games</span>
+      <span>TP-Sala-de-Juegos-Mia</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
