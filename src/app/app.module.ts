@@ -10,13 +10,15 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module';
+import { LogoComponent } from './components/logo/logo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuPrincipalComponent,
     CarruselComponent,
-    HomeComponent
+    HomeComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,
