@@ -11,6 +11,10 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { HomeComponent } from './components/home/home.component';
 import { MaterialModule } from './material.module';
 import { LogoComponent } from './components/logo/logo.component';
+import { BotonComponent } from './components/boton/boton.component';
+import { BotonLoginComponent } from './components/boton-login/boton-login.component';
+import { CardComponent } from './components/card/card.component';
+import { AguilidadAritmeticaComponent } from './components/aguilidad-aritmetica/aguilidad-aritmetica.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { LogoComponent } from './components/logo/logo.component';
     MenuPrincipalComponent,
     CarruselComponent,
     HomeComponent,
-    LogoComponent
+    LogoComponent,
+    BotonComponent,
+    BotonLoginComponent,
+    CardComponent,
+    AguilidadAritmeticaComponent
   ],
   imports: [
     BrowserModule,
