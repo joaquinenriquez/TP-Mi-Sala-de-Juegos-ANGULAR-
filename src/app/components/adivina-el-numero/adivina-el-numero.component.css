@@ -1,118 +1,53 @@
-
-form {
-  border: 10px solid #f1f1f1;
-  padding: 10px;
-  background:gray;
+@font-face {
+  font-family: matematica;
+  src: url("../../../assets//fonts/mathematical/Mathematical.ttf") format("truetype");
 }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-button {
-  /*background-color: #4CAF50;*/
+.operador1 {
+  background-color:#1d1d1d;
+  font-family: matematica;
+  font-weight: bold;
+  text-align: center;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
+  font-size: 4.5rem;
+  border-radius: 25px;
+  border: 2px solid aqua;
 }
 
-button:hover {
-  opacity: 0.8;
+input {
+  width: 170px;
+  height: 60px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 3rem;
+  border: 2px solid aqua;
+  background-color:lightgray;
+  font-family: matematica;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-.aceptbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #3664F4;
-}
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
+/* input {
+  width: 10rem;
+  font-size: 2rem;
+  margin: 3rem 0;
+} */
+
+.canvas {
+  background-image: url("../../../assets/img/pay-530338_1920-900x636.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 25px;
+  border: 2px solid black;
+  background-size: cover;
+  background-color: dimgray;
+  padding: 2px;
+  border: 3px solid #000;
+  box-shadow: 6px 6px 0 #aaa;
+  max-height: 560px;
+
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-
-
-
-#snackbar {
-  visibility: hidden;
-  min-width: 250px;
-  margin-left: -125px;
-
-  color: #fff;
-  text-align: center;
-  border-radius: 2px;
-  padding: 16px;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  bottom: 30px;
-  font-size: 17px;
-}
-#snackbar.Ganador {
-  background-color: #059F2F;
-}
-#snackbar.Perdedor {
-  background-color: #FF0000;
-}
-#snackbar.show {
-  visibility: visible;
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}

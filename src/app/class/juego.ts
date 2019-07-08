@@ -1,4 +1,5 @@
 export abstract class Juego {
+
   public nombre = 'Sin Nombre';
   public jugador: string;
   public gano = false;

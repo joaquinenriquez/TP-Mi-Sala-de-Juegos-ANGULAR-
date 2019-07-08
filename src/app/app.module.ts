@@ -21,6 +21,10 @@ import { ModalGameOver1Component } from './components/modal-game-over1/modal-gam
 import { ModalGameOver2Component } from './components/modal-game-over2/modal-game-over2.component';
 import { ComponentFactoryResolver} from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina-el-numero.component';
+import { BurbujaMensajeComponent } from './components/burbuja-mensaje/burbuja-mensaje.component';
+import { GenioComponent } from './components/genio/genio.component';
+import { BurbujaMensaje2Component } from './components/burbuja-mensaje2/burbuja-mensaje2.component';
 
 
 @NgModule({
@@ -37,7 +41,11 @@ import {NgbModal, ModalDismissReasons, NgbModule} from '@ng-bootstrap/ng-bootstr
     CronometroComponent,
     Boton2Component,
     ModalGameOver1Component,
-    ModalGameOver2Component
+    ModalGameOver2Component,
+    AdivinaElNumeroComponent,
+    BurbujaMensajeComponent,
+    GenioComponent,
+    BurbujaMensaje2Component
   ],
   imports: [
     BrowserModule,
