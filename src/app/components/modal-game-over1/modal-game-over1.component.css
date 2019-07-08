@@ -1,0 +1,27 @@
+@keyframes blink { 50% { border-color: #ff0000; }  }
+table{
+	border: 8px solid #000000 ;
+	position: fixed ;
+	top: 50% ;
+	right: 50% ;
+	width: 20em ;
+	height: 6em ;
+	margin: -2.5em -10em ;
+	text-align:center ;
+	font-family: monospace ;
+	font-size: 25px ;
+	font-weight: bold;
+	color: #ff0000 ;
+	background-color: #000000 ;
+  animation: blink .5s step-end infinite alternate;
+}
+
+body{
+	background-color: #000000 ;
+	text-align:center ;
+	font-family: arcade, monospace ;
+	font-size: 15px ;
+	font-weight: bold ;
+  color: #ff0000 ;
+
+}

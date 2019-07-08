@@ -1,38 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!--app-menu></app-menu-->
-<!-- index.html -->
+<section class="canvas">
+
+  <div class="container">
+
+    <h2 class="text-center">Nivel {{juego.nivel}}</h2>
+    <br>
+
+    <div class="row">
+
+      <div class="col-4">
+        <div class="operador1">
+          <span>{{juego.operador1}}</span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="operador1 operacion">
+          <span>{{juego.operacion}}</span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="operador1">
+          <span>{{juego.operador2}}</span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-3"><input type="text" [(ngModel)]="juego.resultadoIngresado" placeholder="Resultado"
+            (keydown.enter)="verificar()" #txtValorIngresado></div>
+        <div class="col-2">
+          <app-boton2 [texto]="'Verificar'" (miClick)="verificar()" data-toggle="modal" data-target="#modalBook"></app-boton2>
+        </div>
+        <div class="col-3 text-center"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-3 text-center">
+        <app-cronometro (fin)="juego.perdio()" #cronometro></app-cronometro>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+  </div>
+  <ng-template #content let-modal>
+      <app-modal-game-over1></app-modal-game-over1>
+  </ng-template>
+</section>
 
 
-<form name="juego">
-    <ul>
-       <li>
-       Primer número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
 
-      </li>
-      <li>
-       Operador: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-
-      </li>
-      <li>
-       Segundo número: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%" readonly/>
-
-      </li>
-      <li>
-        Respuesta: <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control" style="width:50%"/>
-
-       </li>
-      <li>
-        <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg">Verificar {{Tiempo}} </button></h2>
-      </li>
-      <li>
-        <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo</button></h2>
-      </li>
-      <li>
-        <h2><p><i class="fa fa-spinner fa-spin"></i>Esperando numero...</p></h2>
-
-        <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-        <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-      </li>
-    </ul>
-
-    </form>

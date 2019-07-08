@@ -1,8 +1,9 @@
-import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter, ViewChild, ElementRef} from '@angular/core';
 import { JuegoAgilidad } from '../../class/juego-agilidad';
+import { FormsModule } from '@angular/forms';
+import { CronometroComponent } from '../cronometro/cronometro.component';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
-import {Subscription} from "rxjs";
-import {TimerObservable} from "rxjs/observable/TimerObservable";
 
 @Component({
   selector: 'app-aguilidad-aritmetica',
@@ -11,46 +12,45 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 })
 export class AguilidadAritmeticaComponent implements OnInit {
 
-  @Output()
-  enviarJuego :EventEmitter<any>= new EventEmitter<any>();
-  nuevoJuego : JuegoAgilidad;
-  ocultarVerificar: boolean;
-  Tiempo: number;
-  repetidor:any;
-  private subscription: Subscription;
-
-  constructor() {
-    this.ocultarVerificar=true;
-    this.Tiempo=5;
-    this.nuevoJuego = new JuegoAgilidad();
-    console.info("Inicio agilidad");
-  }
-
-  NuevoJuego() {
-    this.ocultarVerificar=false;
-   this.repetidor = setInterval(()=>{
-
-      this.Tiempo--;
-      console.log("llego", this.Tiempo);
-      if(this.Tiempo==0 ) {
-        clearInterval(this.repetidor);
-        this.verificar();
-        this.ocultarVerificar=true;
-        this.Tiempo=5;
-      }
-      }, 900);
-
-  }
-  verificar()
-  {
-    this.ocultarVerificar=false;
-    clearInterval(this.repetidor);
-
-
-
-  }
+  juego: JuegoAgilidad;
+  @ViewChild('txtValorIngresado') txtValorIngresado: ElementRef;
+  @ViewChild('cronometro') cronometro: CronometroComponent;
+  reiniciarTimer = false;
+  closeResult: string;
 
   ngOnInit() {
+    this.juego = new JuegoAgilidad();
+    this.juego.nuevoJuego();
+    this.txtValorIngresado.nativeElement.focus();
+  }
+
+  constructor(private modalService: NgbModal) {}
+
+
+  verificar() {
+    this.txtValorIngresado.nativeElement.value = '';
+    if (this.juego.verificar()) {
+      console.log('asddd');
+      this.cronometro.reset(10);
+    }
+  }
+
+  open(content) {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
+    }
   }
 
 }
