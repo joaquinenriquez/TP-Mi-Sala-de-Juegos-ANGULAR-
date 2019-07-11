@@ -1,25 +1,42 @@
 <section class="canvas">
 
   <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <div class="row">
 
-          <div class="col-2">
-              <app-burbuja-mensaje2></app-burbuja-mensaje2>
+    <div class="row vertical-align">
+      <div class="col-1"></div>
+      <div class="col-3">
+        <!-- <app-burbuja-mensaje2 class="v-center" [valor]="juego.numeroIngresado" [efecto]="this.juego.mostrarInput" *ngIf="this.juego.mostrarInput" (keydown.enter)="verificar()"></app-burbuja-mensaje2> -->
+
+        <div class="inner" *ngIf="juego.mostrarInput">
+          <div class="inner__row text--left">
+              <div class="cbbl" [ngClass]="{'fade-in': this.juego.mostrarInput === true}">
+                  <input type="text" placeholder="numero" appSoloNumeros [(ngModel)]="juego.numeroIngresadoString" autofocus (keydown.enter)="verificar()" #inputNro>
+              </div>
           </div>
-            <div class="col-6">
-                <button class="btn btn-primary">Probar...</button>
-            </div>
+        </div>
+
+        <p>-</p>
+        <p>-</p>
+        <p>-</p>
+        <div class="row">
+          <div class="col-12">
+              <app-boton-retro [efecto]="this.juego.mostrarInput" [textoBoton]="'Probar'" *ngIf="this.juego.mostrarInput" (click)="verificar()"></app-boton-retro>
+          </div>
         </div>
 
       </div>
-      <div class="col-4">
+
+      <div class="col-7">
         <div class="row">
-          <app-genio class="genio" [mensaje1]="juego.mensaje1" [mensaje2]="juego.mensaje2" (miClick)="juego.nuevoJuego()"></app-genio>
+          <div class="col-5"></div>
+          <div class="col-7">
+            <app-genio class="genio" [mensaje1]="juego.mensaje1" [mensaje2]="juego.mensaje2"
+              (miClick)="onClickEnGenio()"></app-genio>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 
 </section>

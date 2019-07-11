@@ -50,7 +50,7 @@
     <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
   </div>
   <ng-template #content let-modal>
-      <app-modal-game-over1></app-modal-game-over1>
+      <app-modal-game-over1 (jugarDeNuevo)="nuevoJuego()"></app-modal-game-over1>
   </ng-template>
 </section>
 

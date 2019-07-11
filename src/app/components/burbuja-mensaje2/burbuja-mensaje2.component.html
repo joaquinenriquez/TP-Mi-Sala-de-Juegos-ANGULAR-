@@ -1,9 +1,7 @@
 <div class="inner">
-
     <div class="inner__row text--left">
-        <div class="cbbl -right">
-            <input type="text" placeholder="numero">
+        <div class="cbbl" [ngClass]="{'fade-in': efecto === true}" #inputNumero>
+            <input type="text" placeholder="numero" appSoloNumeros (change)="onChange($event)" [(ngModel)]="valor">
         </div>
     </div>
-
   </div>

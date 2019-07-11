@@ -7,4 +7,5 @@
 .genio {
   position: relative;
   bottom: 40px;
+  max-height: 350px;
 }

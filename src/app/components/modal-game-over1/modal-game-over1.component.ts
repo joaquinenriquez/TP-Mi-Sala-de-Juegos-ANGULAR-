@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,6 +7,8 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./modal-game-over1.component.css']
 })
 export class ModalGameOver1Component implements OnInit {
+
+  @Output() jugarDeNuevo: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   constructor(private modalService: NgbModal) {}
 
@@ -31,5 +33,9 @@ export class ModalGameOver1Component implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
+  }
+
+  onJugarDeNuevo() {
+    this.jugarDeNuevo.emit();
   }
 }

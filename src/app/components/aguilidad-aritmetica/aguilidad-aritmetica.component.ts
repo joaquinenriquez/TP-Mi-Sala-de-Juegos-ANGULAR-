@@ -30,9 +30,13 @@ export class AguilidadAritmeticaComponent implements OnInit {
   verificar() {
     this.txtValorIngresado.nativeElement.value = '';
     if (this.juego.verificar()) {
-      console.log('asddd');
       this.cronometro.reset(10);
     }
+  }
+
+  nuevoJuego() {
+    this.juego.nuevoJuego();
+    this.cronometro.reset(10);
   }
 
   open(content) {

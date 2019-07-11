@@ -35,6 +35,8 @@ import { BurbujaMensaje2Component } from './components/burbuja-mensaje2/burbuja-
 import { YouWinComponent } from './components/you-win/you-win.component';
 
 import { RoutesModule } from '../app/routes/routes.module';
+import { BotonRetroComponent } from './components/boton-retro/boton-retro.component';
+import { SoloNumerosDirective } from './directives/solo-numeros.directive';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,9 @@ import { RoutesModule } from '../app/routes/routes.module';
     BurbujaMensajeComponent,
     GenioComponent,
     BurbujaMensaje2Component,
-    YouWinComponent
+    YouWinComponent,
+    BotonRetroComponent,
+    SoloNumerosDirective
 
   ],
   imports: [

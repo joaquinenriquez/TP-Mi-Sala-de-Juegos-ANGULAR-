@@ -12,11 +12,12 @@
 	font-size: 25px ;
 	font-weight: bold;
 	color: #ff0000 ;
-	background-color: #000000 ;
+	background-color: black ;
   animation: blink-Modal .5s step-end infinite alternate;
   position: absolute;
   left: 50%;
   top: 500%;
+  min-width: 490px;
   transform: translate(-50%, -50%);
 }
 

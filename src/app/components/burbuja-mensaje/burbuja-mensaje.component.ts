@@ -12,6 +12,7 @@ export class BurbujaMensajeComponent implements OnInit {
   @Input() mensaje2: string;
   @Output() miClick: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+
   constructor() { }
 
   ngOnInit() {
@@ -20,5 +21,7 @@ export class BurbujaMensajeComponent implements OnInit {
   onClick(e) {
     this.miClick.emit(e);
   }
+
+
 
 }

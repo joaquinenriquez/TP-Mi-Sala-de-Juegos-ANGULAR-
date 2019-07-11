@@ -40,6 +40,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
     this.estado = 'jugando';
     this.mensaje = '';
     this.imagenActual = this.imagenInicio;
+    this.efectoMensaje = false;
     await this.delay(1000);
     let indice: number = Math.floor(Math.random() * 3);
     this.juegoComputer = this.PiedraPapelOTijera[indice];

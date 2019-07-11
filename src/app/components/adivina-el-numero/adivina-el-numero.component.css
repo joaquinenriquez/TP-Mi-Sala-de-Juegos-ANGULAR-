@@ -47,7 +47,274 @@ input {
   padding: 2px;
   border: 3px solid #000;
   box-shadow: 6px 6px 0 #aaa;
-  max-height: 560px;
+  max-height: 480px;
+  min-height: 480px;
 
 }
 
+.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Optional, to align inner items
+                              horizontally inside the column */
+}
+
+/**
+ *  Do NOT include this part into your stylesheet.
+ *  "flex: 1" or "flex-grow: 1" is added to make the inner div
+ *  - Which is also a flex-item - take up all the horizontal space
+ *  available space inside the flex container (.col-* elements)
+ */
+.vertical-align > [class^="col-"] > div,
+.vertical-align > [class*=" col-"] > div {
+  flex-grow: 1;
+}
+
+
+
+body {
+  font-family: Verdana, sans-serif;
+}
+a {
+  text-decoration: underline;
+  color: #404040;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.text--left {
+  text-align: left;
+}
+.text--right {
+  text-align: right;
+}
+.credits {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+.description {
+  font-size: 12px;
+}
+strong {
+  font-weight: 700;
+}
+hr {
+  margin: 10px 0;
+}
+.inner__row {
+  margin-bottom: 15px;
+}
+.inner__title,
+.inner__desc {
+  display: block;
+  margin-bottom: 10px;
+}
+.inner__title {
+  font-weight: 700;
+}
+.inner__desc {
+  font-size: 14px;
+}
+input,
+button {
+  border: none;
+  min-height: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: Verdana, sans-serif;
+}
+input:active,
+button:active,
+input:focus,
+button:focus {
+  outline: none;
+}
+button {
+  background-color: transparent;
+}
+.cbbl {
+  font-size: 30px;
+  font-family: 'Iceland', cursive;
+  position: absolute;
+  max-width: 200px;
+  margin-left: 50px;
+  left: 10px;
+}
+.cbbl input {
+  font-family: 'Iceland', cursive;
+  max-width: 180px;
+}
+.cbbl {
+  position: relative;
+  display: inline-block;
+  margin: 10px 9px 29px 6px;
+  text-align: center;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  padding: 5px;
+  box-shadow: 0 -3px #fff, 0 -6px #000, 3px 0 #fff, 3px -3px #000, 6px 0 #000, 0 3px #fff, 0 6px #000, -3px 0 #fff, -3px 3px #000, -6px 0 #000, -3px -3px #000, 3px 3px #000, 3px 9px #aaa, 6px 6px #aaa, 9px 3px #aaa;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+.cbbl::before,
+.cbbl::after {
+  content: '';
+  display: block;
+  position: absolute;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  left: 20%;
+}
+.cbbl::after {
+  background: #fff;
+  width: 9px;
+  height: 3px;
+  bottom: -14px;
+  margin-left: 6px;
+  box-shadow: -3px 0 #000, 3px 0 #000, 3px 3px #fff, 0px 3px #000, 6px 3px #000, 9px 3px #aaa, 3px 6px #000, 6px 6px #000, 9px 6px #aaa, 6px 9px #aaa;
+}
+.cbbl::before {
+  width: 15px;
+  height: 8px;
+  background: #fff;
+  bottom: -11px;
+  border-left: 3px solid #000;
+  border-right: 3px solid #000;
+}
+.cbbl.-hover:hover {
+  background-color: #eee;
+  color: #000;
+  box-shadow: 0 -3px #eee, 0 -6px #7bc8a4, 3px 0 #eee, 3px -3px #7bc8a4, 6px 0 #7bc8a4, 0 3px #eee, 0 6px #7bc8a4, -3px 0 #eee, -3px 3px #7bc8a4, -6px 0 #7bc8a4, -3px -3px #7bc8a4, 3px 3px #7bc8a4, 3px 9px #cae9db, 6px 6px #cae9db, 9px 3px #cae9db;
+}
+.cbbl.-hover:hover::before {
+  background: #eee;
+  border-left-color: #7bc8a4;
+  border-right-color: #7bc8a4;
+}
+.cbbl.-hover:hover::after {
+  box-shadow: -3px 0 #7bc8a4, 3px 0 #7bc8a4, 3px 3px #eee, 0px 3px #7bc8a4, 6px 3px #7bc8a4, 9px 3px #cae9db, 3px 6px #7bc8a4, 6px 6px #7bc8a4, 9px 6px #cae9db, 6px 9px #cae9db, 9px 9px #7bc8a4;
+}
+.cbbl.-hover:hover.-control input[type=submit],
+.cbbl.-hover:hover.-control button,
+.cbbl.-hover:hover.-control a {
+  color: #000;
+}
+.cbbl.-up {
+  margin: 29px 9px 10px 6px;
+}
+.cbbl.-up::before {
+  top: -11px;
+  bottom: auto;
+}
+.cbbl.-up::after {
+  top: -14px;
+  bottom: auto;
+  box-shadow: -3px 0 #000, 3px 0 #000, 3px -3px #fff, 0px -3px #000, 6px -3px #000, 3px -6px #000, 6px -6px #000;
+}
+.cbbl.-up.-hover:hover::after {
+  box-shadow: -3px 0 #7bc8a4, 3px 0 #7bc8a4, 3px -3px #eee, 0px -3px #7bc8a4, 6px -3px #7bc8a4, 3px -6px #7bc8a4, 6px -6px #7bc8a4;
+}
+.cbbl.-up.-right::after {
+  box-shadow: 3px 0 #000, -3px 0 #000, -3px -3px #fff, 0px -3px #000, -6px -3px #000, -3px -6px #000, -6px -6px #000;
+}
+.cbbl.-up.-right.-hover:hover::after {
+  box-shadow: 3px 0 #7bc8a4, -3px 0 #7bc8a4, -3px -3px #eee, 0px -3px #7bc8a4, -6px -3px #7bc8a4, -3px -6px #7bc8a4, -6px -6px #7bc8a4;
+}
+.cbbl.-right::before,
+.cbbl.-right::after {
+  left: auto;
+  right: 20%;
+}
+.cbbl.-right::after {
+  margin-left: 0;
+  margin-right: 6px;
+  box-shadow: 3px 0 #000, -3px 0 #000, -3px 3px #fff, 0px 3px #000, -6px 3px #000, -3px 6px #000, -6px 6px #000, -3px 9px #aaa, 0 6px #aaa, 3px 3px #aaa, 6px 0px #aaa;
+}
+.cbbl.-right.-hover:hover::after {
+  box-shadow: 3px 0 #7bc8a4, -3px 0 #7bc8a4, -3px 3px #eee, 0px 3px #7bc8a4, -6px 3px #7bc8a4, -3px 6px #7bc8a4, -6px 6px #7bc8a4, -3px 9px #cae9db, 0 6px #cae9db, 3px 3px #cae9db, 6px 0px #cae9db;
+}
+.cbbl.-no-selection {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.cbbl.-control {
+  cursor: pointer;
+}
+.cbbl.-control input[type=submit],
+.cbbl.-control button,
+.cbbl.-control a {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.cbbl.-control:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.fade-in {
+  animation: fadeIn ease 5s;
+  -webkit-animation: fadeIn ease 5s;
+  -moz-animation: fadeIn ease 5s;
+  -o-animation: fadeIn ease 5s;
+  -ms-animation: fadeIn ease 5s;
+}
+
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
