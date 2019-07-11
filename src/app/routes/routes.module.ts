@@ -4,11 +4,14 @@ import { HomeComponent } from '../components/home/home.component';
 import { AdivinaElNumeroComponent } from '../components/adivina-el-numero/adivina-el-numero.component';
 
 import { RouterModule } from '@angular/router';
+import { CronometroComponent } from '../components/cronometro/cronometro.component';
 
 const rutas = [
+  {path: 'cronometro', component: CronometroComponent},
   {path: 'home', component: HomeComponent},
   {path: '', component: HomeComponent},
   {path: 'Adivina', component: AdivinaElNumeroComponent}
+
 ];
 
 

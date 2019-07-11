@@ -1,0 +1,58 @@
+<section class="canvas">
+
+  <div class="container">
+
+    <h2 class="text-center">Nivel {{juego.nivel}}</h2>
+    <br>
+
+    <div class="row">
+
+      <div class="col-4">
+        <div class="operador1">
+          <span>{{juego.operador1}}</span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="operador1 operacion">
+          <span>{{juego.operacion}}</span>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class="operador1">
+          <span>{{juego.operador2}}</span>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-3"><input type="text" [(ngModel)]="juego.resultadoIngresado" placeholder="Resultado"
+            (keydown.enter)="verificar()" #txtValorIngresado></div>
+        <div class="col-2">
+          <app-boton2 [texto]="'Verificar'" (miClick)="verificar()" data-toggle="modal" data-target="#modalBook"></app-boton2>
+        </div>
+        <div class="col-3 text-center"></div>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col-5"></div>
+      <div class="col-3 text-center">
+        <app-cronometro (fin)="juego.perdio()" #cronometro></app-cronometro>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+  </div>
+  <ng-template #content let-modal>
+      <app-modal-game-over1></app-modal-game-over1>
+  </ng-template>
+</section>
+
+
+

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: matematica;
+  src: url("../../../assets//fonts/mathematical/Mathematical.ttf") format("truetype");
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.operador1 {
+  background-color:#1d1d1d;
+  font-family: matematica;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  font-size: 4.5rem;
+  border-radius: 25px;
+  border: 2px solid aqua;
+}
+
+input {
+  width: 170px;
+  height: 60px;
+  text-align:center;
+  font-weight: bold;
+  font-size: 3rem;
+  border: 2px solid aqua;
+  background-color:lightgray;
+  font-family: matematica;
+}
+
+/* input {
+  width: 10rem;
+  font-size: 2rem;
+  margin: 3rem 0;
+} */
+
+.canvas {
+  background-image: url("../../../assets/img/confused-math-png-1.png");
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid black;
+  /* background-color: #1d1d1d; */
+  background-color: dimgray;
+}

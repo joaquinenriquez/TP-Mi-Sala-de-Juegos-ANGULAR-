@@ -1,0 +1,42 @@
+@font-face {
+  font-family: matematica;
+  src: url("../../../assets//fonts/mathematical/Mathematical.ttf") format("truetype");
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+
+
+.canvas {
+  background-image: url("../../../assets/img/van/RegalAssuredGossamerwingedbutterfly-size_restricted.gif");
+  /* padding: 10px; */
+  background-repeat: no-repeat;
+  border-radius: 25px;
+  border: 2px solid black;
+  /* background-color: #1d1d1d; */
+  background-color: #C6F88C;
+  background-size: cover;
+  background-position: center;
+}
+
+img.frame {
+  /* border-image: url('//s3-us-west-2.amazonaws.com/s.cdpn.io/4273/frame.png') 93 92 87 92 stretch stretch; */
+  /* //border-image: url('../../../assets/img/van/RegalAssuredGossamerwingedbutterfly-size_restricted.gif') 1 92 1 92 stretch stretch; */
+  border-color: #f4be52;
+  border-style: inset;
+  border-width: 10px;
+  display: block;
+  width: auto;
+  background-color: #ffe;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+@media all and (max-width: 500px) {
+  img.frame {
+    border-width: 0px;
+    width: 100%; }
+}
