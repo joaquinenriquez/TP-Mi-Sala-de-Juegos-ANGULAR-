@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-boton-arcade-tijera',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonArcadeTijeraComponent implements OnInit {
 
+  @Output() miClick: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }

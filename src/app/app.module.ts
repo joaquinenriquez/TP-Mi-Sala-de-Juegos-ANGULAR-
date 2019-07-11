@@ -32,8 +32,9 @@ import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina
 import { BurbujaMensajeComponent } from './components/burbuja-mensaje/burbuja-mensaje.component';
 import { GenioComponent } from './components/genio/genio.component';
 import { BurbujaMensaje2Component } from './components/burbuja-mensaje2/burbuja-mensaje2.component';
+import { YouWinComponent } from './components/you-win/you-win.component';
 
-
+import { RoutesModule } from '../app/routes/routes.module';
 
 @NgModule({
   declarations: [
@@ -59,11 +60,13 @@ import { BurbujaMensaje2Component } from './components/burbuja-mensaje2/burbuja-
     AdivinaElNumeroComponent,
     BurbujaMensajeComponent,
     GenioComponent,
-    BurbujaMensaje2Component
+    BurbujaMensaje2Component,
+    YouWinComponent
 
   ],
   imports: [
     BrowserModule,
+    RoutesModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     LayoutModule,

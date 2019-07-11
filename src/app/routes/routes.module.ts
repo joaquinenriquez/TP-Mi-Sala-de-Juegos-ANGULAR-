@@ -1,27 +1,19 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from '../components/home/home.component';
+import { Routes, RouterModule } from '@angular/router';
 import { AdivinaElNumeroComponent } from '../components/adivina-el-numero/adivina-el-numero.component';
+import { HomeComponent } from '../components/home/home.component';
 
-import { RouterModule } from '@angular/router';
-import { CronometroComponent } from '../components/cronometro/cronometro.component';
+const routes: Routes = [
 
-const rutas = [
-  {path: 'cronometro', component: CronometroComponent},
-  {path: 'home', component: HomeComponent},
-  {path: '', component: HomeComponent},
-  {path: 'Adivina', component: AdivinaElNumeroComponent}
+  { path: '', component: HomeComponent },
+  { path: 'adivina', component: AdivinaElNumeroComponent }
 
 ];
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(rutas)
-  ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-
 
 export class RoutesModule { }
