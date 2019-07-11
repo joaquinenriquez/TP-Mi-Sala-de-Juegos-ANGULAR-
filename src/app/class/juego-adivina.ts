@@ -1,35 +1,31 @@
 import { Juego } from './juego';
 
-export class JuegoAdivina extends  Juego {
-    numeroSecreto = 0;
-    numeroIngresado = 0;
+enum estados {'Espera', 'Jugando', 'Gano', 'Perdio'};
 
-    constructor(nombre?: string, gano?: boolean, jugador?: string) {
-        super('Adivina el número', gano, jugador);
+export class JuegoAdivina extends Juego {
 
+  numeroSecreto = 0;
+  numeroIngresado = 0;
+  public mensaje1: string;
+  public mensaje2: string;
 
+  constructor(nombre?: string, gano?: boolean, jugador?: string) {
+    super('Adivina el número', gano, jugador);
+  }
 
-      }
-    public verificar() {
-        if (this.numeroIngresado === this.numeroSecreto) {
-          this.gano = true;
-        }
-        if (this.gano) {
-          return true;
-        } else {
-          return false;
-        }
-     }
-     public generarnumero() {
-        this.numeroSecreto = Math.floor((Math.random() * 100) + 1);
-        // tslint:disable-next-line:no-console
-        console.info('numero Secreto:' + this.numeroSecreto);
-        this.gano = false;
-      }
-      public retornarAyuda() {
-        if (this.numeroIngresado < this.numeroSecreto) {
-          return 'Falta';
-        }
-        return 'Te pasate';
-      }
+  public verificar(): boolean {
+    throw new Error("Method not implemented.");
+  }
+
+  public async nuevoJuego() {
+    this.mensaje1 = 'Genial! Preparado para perder..?';
+    this.mensaje2 = '';
+    await this.delay(2000);
+    this.mensaje1 = 'A ver.. intenta un numero';
+  }
+
+  public delay(timeInMillis: number): Promise<void> {
+    return new Promise((resolve) => setTimeout(() => resolve(), timeInMillis));
+  }
+
 }

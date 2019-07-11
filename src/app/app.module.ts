@@ -21,11 +21,18 @@ import { ModalGameOver1Component } from './components/modal-game-over1/modal-gam
 import { ModalGameOver2Component } from './components/modal-game-over2/modal-game-over2.component';
 import { ComponentFactoryResolver} from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
 import { PiedraPapelTijeraComponent } from './components/piedra-papel-tijera/piedra-papel-tijera.component';
 import { BotonArcadeComponent } from './components/boton-arcade/boton-arcade.component';
 import { BotonArcadePiedraComponent } from './components/boton-arcade-piedra/boton-arcade-piedra.component';
 import { BotonArcadePapelComponent } from './components/boton-arcade-papel/boton-arcade-papel.component';
 import { BotonArcadeTijeraComponent } from './components/boton-arcade-tijera/boton-arcade-tijera.component';
+
+import { AdivinaElNumeroComponent } from './components/adivina-el-numero/adivina-el-numero.component';
+import { BurbujaMensajeComponent } from './components/burbuja-mensaje/burbuja-mensaje.component';
+import { GenioComponent } from './components/genio/genio.component';
+import { BurbujaMensaje2Component } from './components/burbuja-mensaje2/burbuja-mensaje2.component';
+
 
 
 @NgModule({
@@ -43,11 +50,17 @@ import { BotonArcadeTijeraComponent } from './components/boton-arcade-tijera/bot
     Boton2Component,
     ModalGameOver1Component,
     ModalGameOver2Component,
+
     PiedraPapelTijeraComponent,
     BotonArcadeComponent,
     BotonArcadePiedraComponent,
     BotonArcadePapelComponent,
-    BotonArcadeTijeraComponent
+    BotonArcadeTijeraComponent,
+    AdivinaElNumeroComponent,
+    BurbujaMensajeComponent,
+    GenioComponent,
+    BurbujaMensaje2Component
+
   ],
   imports: [
     BrowserModule,
