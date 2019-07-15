@@ -43,14 +43,14 @@
     <div class="row">
       <div class="col-5"></div>
       <div class="col-3 text-center">
-        <app-cronometro (fin)="juego.perdio()" #cronometro></app-cronometro>
+        <app-cronometro (fin)="perdio()" #cronometro></app-cronometro>
       </div>
       <div class="col-4"></div>
     </div>
     <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
   </div>
   <ng-template #content let-modal>
-      <app-modal-game-over1 (jugarDeNuevo)="nuevoJuego()"></app-modal-game-over1>
+      <app-modal-game-over1 (jugarDeNuevo)="nuevoJuego()" (salir)="salir()"></app-modal-game-over1>
   </ng-template>
 </section>
 

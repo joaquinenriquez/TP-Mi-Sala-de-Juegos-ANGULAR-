@@ -64,12 +64,12 @@ export class AdivinaElNumeroComponent implements AfterViewInit, OnInit {
           break;
       }
 
-      this.juego.numeroIngresado = 0;
       if (this.juego.estado === 'jugando') {
         mensaje2 = `Te doy una pista: ${this.juego.retornarAyuda()}`;
       }
       this.juego.mensaje1 = mensaje1;
       this.juego.mensaje2 = mensaje2;
+      this.juego.numeroIngresado = 0;
 
     }
   }

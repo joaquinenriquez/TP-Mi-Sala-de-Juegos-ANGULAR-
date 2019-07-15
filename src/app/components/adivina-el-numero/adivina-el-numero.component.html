@@ -8,9 +8,9 @@
         <!-- <app-burbuja-mensaje2 class="v-center" [valor]="juego.numeroIngresado" [efecto]="this.juego.mostrarInput" *ngIf="this.juego.mostrarInput" (keydown.enter)="verificar()"></app-burbuja-mensaje2> -->
 
         <div class="inner" *ngIf="juego.mostrarInput">
-          <div class="inner__row text--left">
-              <div class="cbbl" [ngClass]="{'fade-in': this.juego.mostrarInput === true}">
-                  <input type="text" placeholder="numero" appSoloNumeros [(ngModel)]="juego.numeroIngresadoString" autofocus (keydown.enter)="verificar()" #inputNro>
+          <div class="">
+              <div class="miInput" [ngClass]="{'fade-in': this.juego.mostrarInput === true}">
+                  <input type="text" style="width: 150px" placeholder="numero" appSoloNumeros [(ngModel)]="juego.numeroIngresadoString" autofocus (keydown.enter)="verificar()" #inputNro>
               </div>
           </div>
         </div>

@@ -37,6 +37,9 @@ import { YouWinComponent } from './components/you-win/you-win.component';
 import { RoutesModule } from '../app/routes/routes.module';
 import { BotonRetroComponent } from './components/boton-retro/boton-retro.component';
 import { SoloNumerosDirective } from './directives/solo-numeros.directive';
+import { AnagramasComponent } from './components/anagramas/anagramas.component';
+import { Cronometro2Component } from './components/cronometro2/cronometro2.component';
+import { Boton3Component } from './components/boton3/boton3.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { SoloNumerosDirective } from './directives/solo-numeros.directive';
     BurbujaMensaje2Component,
     YouWinComponent,
     BotonRetroComponent,
-    SoloNumerosDirective
+    SoloNumerosDirective,
+    AnagramasComponent,
+    Cronometro2Component,
+    Boton3Component
 
   ],
   imports: [

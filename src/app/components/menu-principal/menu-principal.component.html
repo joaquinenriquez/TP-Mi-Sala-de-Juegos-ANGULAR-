@@ -5,7 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Anagrama</a>
+      <a mat-list-item [routerLink]="['/anagramas']" routerLinkActive="router-link-active">Anagrama</a>
       <a mat-list-item [routerLink]="['/piedrapapelotijera']" routerLinkActive="router-link-active">Piedra, papel o tijera</a>
       <a mat-list-item [routerLink]="['/aguilidad']" routerLinkActive="router-link-active">Agilidad Artimética</a>
       <a mat-list-item [routerLink]="['/adivina']" routerLinkActive="router-link-active" >Adivina el número</a>

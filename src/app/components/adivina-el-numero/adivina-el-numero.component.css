@@ -19,16 +19,7 @@ h2 {
   border: 2px solid aqua;
 }
 
-input {
-  width: 170px;
-  height: 60px;
-  text-align:center;
-  font-weight: bold;
-  font-size: 3rem;
-  border: 2px solid aqua;
-  background-color:lightgray;
-  font-family: matematica;
-}
+
 
 /* input {
   width: 10rem;
@@ -144,7 +135,7 @@ button {
   background-color: transparent;
 }
 .cbbl {
-  font-size: 30px;
+  font-size: 20px;
   font-family: 'Iceland', cursive;
   position: absolute;
   max-width: 200px;
@@ -153,8 +144,18 @@ button {
 }
 .cbbl input {
   font-family: 'Iceland', cursive;
-  max-width: 180px;
+  /* max-width: 180px; */
 }
+
+.miInput {
+  font-size: 30px;
+  bottom: auto;
+  max-width: 150px;
+  margin-right: 2px;
+  box-shadow: 0 -3px #fff, 0 -6px #000, 3px 0 #fff, 3px -3px #000, 6px 0 #000, 0 3px #fff, 0 6px #000, -3px 0 #fff, -3px 3px #000, -6px 0 #000, -3px -3px #000, 3px 3px #000, 3px 9px #aaa, 6px 6px #aaa, 9px 3px #aaa;
+}
+
+
 .cbbl {
   position: relative;
   display: inline-block;

@@ -2,7 +2,7 @@ import { Component, OnInit ,Input,Output,EventEmitter, ViewChild, ElementRef} fr
 import { JuegoAgilidad } from '../../class/juego-agilidad';
 import { FormsModule } from '@angular/forms';
 import { CronometroComponent } from '../cronometro/cronometro.component';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -15,8 +15,10 @@ export class AguilidadAritmeticaComponent implements OnInit {
   juego: JuegoAgilidad;
   @ViewChild('txtValorIngresado') txtValorIngresado: ElementRef;
   @ViewChild('cronometro') cronometro: CronometroComponent;
+  @ViewChild('content') modal: NgbModalRef;
   reiniciarTimer = false;
   closeResult: string;
+  private modalRef: NgbModalRef;
 
   ngOnInit() {
     this.juego = new JuegoAgilidad();
@@ -34,17 +36,28 @@ export class AguilidadAritmeticaComponent implements OnInit {
     }
   }
 
+  perdio() {
+    this.juego.perdio();
+    this.open(this.modal);
+  }
+
   nuevoJuego() {
+    this.modalRef.close();
     this.juego.nuevoJuego();
     this.cronometro.reset(10);
   }
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    this.modalRef = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+    // .result.then((result) => {
+    //   this.closeResult = `Closed with: ${result}`;
+    // }, (reason) => {
+    //   this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    // });
+  }
+
+  salir() {
+    this.modalRef.close();
   }
 
   private getDismissReason(reason: any): string {

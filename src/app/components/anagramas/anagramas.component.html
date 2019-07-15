@@ -1,0 +1,68 @@
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-2">
+      <app-cronometro2 class="text-center"></app-cronometro2>
+    </div>
+
+    <div class="col-8">
+
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+
+
+      <div class="canvas" (click)="focusEnInput()">
+
+        <div class="row">
+          <div class="col-12">
+              <p class="text-center mt-10">{{this.juegoAnagrama.anagramaActual.palabras[0]}}</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <input type="text" class="text-center chalk-border" autofocus #palabraRespuesta [(ngModel)]="juegoAnagrama.respuesta">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p *ngIf="gano" [ngClass]="{'focus-in-contract-bck': this.efecto === true}">Ganaste!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-2">
+      <app-boton3 (click)="verificar()"></app-boton3>
+    </div>
+
+  </div>
+
+</div>

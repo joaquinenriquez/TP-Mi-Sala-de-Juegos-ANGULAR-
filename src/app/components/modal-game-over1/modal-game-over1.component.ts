@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-modal-game-over1',
@@ -9,16 +10,18 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 export class ModalGameOver1Component implements OnInit {
 
   @Output() jugarDeNuevo: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output() salir: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, router: RouterModule) {}
 
   closeResult: string;
   ngOnInit(): void {
 
   }
 
+
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', centered: true}).result.then((result) => {
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
