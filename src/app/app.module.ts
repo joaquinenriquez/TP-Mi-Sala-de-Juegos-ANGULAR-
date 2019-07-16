@@ -40,6 +40,8 @@ import { SoloNumerosDirective } from './directives/solo-numeros.directive';
 import { AnagramasComponent } from './components/anagramas/anagramas.component';
 import { Cronometro2Component } from './components/cronometro2/cronometro2.component';
 import { Boton3Component } from './components/boton3/boton3.component';
+import { TatetiComponent } from './components/tateti/tateti.component';
+import { PuntosComponent } from './components/puntos/puntos.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { Boton3Component } from './components/boton3/boton3.component';
     SoloNumerosDirective,
     AnagramasComponent,
     Cronometro2Component,
-    Boton3Component
+    Boton3Component,
+    TatetiComponent,
+    PuntosComponent
 
   ],
   imports: [

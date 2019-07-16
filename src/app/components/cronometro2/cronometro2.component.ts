@@ -10,7 +10,6 @@ export class Cronometro2Component implements OnInit {
   @Output() private fin: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Input() private tiempo: number;
 
-  tiempoRestante: number;
   private corriendo: boolean; // True si el reloj esta corriendo
   tiempoFormateado: string;
   interval: any;
@@ -29,7 +28,7 @@ export class Cronometro2Component implements OnInit {
     if (this.tiempo === 0 || this.tiempo === null || this.tiempo === undefined) {
       this.tiempo = 10; // Si no nos definen ningun tiempo por defecto seteamos 10
     }
-    this.tiempoRestante = this.tiempo;
+
     this.start();
   }
 
@@ -47,14 +46,18 @@ export class Cronometro2Component implements OnInit {
     this.tiempoFormateado = `${(this.segundos).toString().padStart(2, '0')}:${this.decimas.toString().padStart(2, '0')}`;
   }
 
-  public reset(tiempoRestante: number) {
+  public reset() {
     clearInterval(this.interval);
     this.decimas = 0;
     this.segundos = 0;
     this.minutos = 0;
     this.contadorDecimas = 0;
-    this.tiempoRestante = tiempoRestante;
     this.start();
+  }
+
+  public pause(): void {
+    clearInterval(this.interval);
+    console.log('asd');
   }
 
 }

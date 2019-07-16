@@ -3,7 +3,17 @@
   <div class="row">
 
     <div class="col-2">
-      <app-cronometro2 class="text-center"></app-cronometro2>
+      <div class="etiquetas">
+          <span class="text-center">TIEMPO</span>
+      </div>
+
+      <app-cronometro2 class="text-center" #cronometro></app-cronometro2>
+
+      <br>
+      <div class="etiquetas">
+          <span class="etiquetas text-center">PUNTOS</span>
+      </div>
+      <app-puntos [puntos]="puntos"></app-puntos>
     </div>
 
     <div class="col-8">
@@ -46,13 +56,14 @@
 
         <div class="row">
           <div class="col-12">
-            <input type="text" class="text-center chalk-border" autofocus #palabraRespuesta [(ngModel)]="juegoAnagrama.respuesta">
+            <input type="text" class="text-center chalk-border" autofocus #palabraRespuesta (keydown.enter)="verificar()" [(ngModel)]="juegoAnagrama.respuesta">
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
-            <p *ngIf="gano" [ngClass]="{'focus-in-contract-bck': this.efecto === true}">Ganaste!</p>
+            <p class="text-center" *ngIf="this.efectoGano" [ngClass]="{'focus-in-contract-bck': this.efectoGanar === true}">Ganaste!</p>
+            <p class="text-center" *ngIf="this.efectoPerdio" [ngClass]="{'focus-in-contract-bck': this.efectoPerdio === true}">Perdiste!</p>
           </div>
         </div>
 
