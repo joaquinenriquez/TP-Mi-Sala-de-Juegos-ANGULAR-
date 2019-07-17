@@ -1,11 +1,76 @@
-<section>
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-8">
+      <div class="tic-tac-toe fondo">
+        <div class="holder">
+          <div class="row buttons choose-symbol cuadroElegir" [ngClass]="{'active': !tableIsVisible}">
 
-  <ul></ul>
+            <div class="container">
 
-  <span class="result"></span>
+              <div class="row">
+                <div class="col-12">
+                  <h3 class="text-center">Elegir X/O</h3>
+                </div>
+              </div>
 
-  <button class="restart" onclick="restart();">Volver a jugar</button>
+              <div class="row">
+
+                <div class="col-2"></div>
+                <div class="col-4"><button class="botones btn" style="color:#63A375"
+                    (click)="setPlayerSymbol('X')">X</button></div>
+                <div class="col-4"><button class="botones btn" style="color:#E94F37"
+                    (click)="setPlayerSymbol('O')">O</button></div>
+                <div class="col-2"></div>
+
+              </div>
+
+            </div>
 
 
-</section>
+          </div>
 
+          <div id="message" style="color:orange" class="center"></div>
+
+          <div class="table-wrapper" [ngClass]="{'active': tableIsVisible}">
+            <table>
+              <tr>
+                <td (click)="makeAMove($event, 0)"></td>
+                <td (click)="makeAMove($event, 1)"></td>
+                <td (click)="makeAMove($event, 2)"></td>
+              </tr>
+              <tr>
+                <td (click)="makeAMove($event, 3)"></td>
+                <td (click)="makeAMove($event, 4)"></td>
+                <td (click)="makeAMove($event, 5)"></td>
+              </tr>
+              <tr>
+                <td (click)="makeAMove($event, 6)"></td>
+                <td (click)="makeAMove($event, 7)"></td>
+                <td (click)="makeAMove($event, 8)"></td>
+              </tr>
+            </table>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row buttons">
+              <br>
+              <!-- <button class="col s4 restart" (click)="restart()">restart</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-1"></div>
+    <div class="col-2">
+        <div class="etiquetas">
+            <span class="etiquetas text-center">PUNTOS</span>
+          </div>
+          <app-puntos [puntos]="this.puntos2"></app-puntos>
+          <br>
+          <a class="button dark_grey" (click)="restart()"> Jugar de nuevo</a>
+    </div>
+  </div>
+</div>

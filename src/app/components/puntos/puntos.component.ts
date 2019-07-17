@@ -15,7 +15,6 @@ export class PuntosComponent implements OnInit {
 
 
   ngOnInit() {
-    this.puntos = 0;
   }
 
   public formatearPuntos() {

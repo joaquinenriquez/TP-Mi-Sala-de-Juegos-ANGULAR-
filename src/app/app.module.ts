@@ -42,6 +42,17 @@ import { Cronometro2Component } from './components/cronometro2/cronometro2.compo
 import { Boton3Component } from './components/boton3/boton3.component';
 import { TatetiComponent } from './components/tateti/tateti.component';
 import { PuntosComponent } from './components/puntos/puntos.component';
+import { Error404Component } from './components/error404/error404.component';
+import { LoginComponent } from './components/login/login.component';
+
+// firebase
+import { environment } from '../environments/environment';
+import {AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { MiPongComponent } from './components/mi-pong/mi-pong.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +86,10 @@ import { PuntosComponent } from './components/puntos/puntos.component';
     Cronometro2Component,
     Boton3Component,
     TatetiComponent,
-    PuntosComponent
+    PuntosComponent,
+    Error404Component,
+    LoginComponent,
+    MiPongComponent
 
   ],
   imports: [
@@ -85,9 +99,14 @@ import { PuntosComponent } from './components/puntos/puntos.component';
     NgbModule.forRoot(),
     LayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule
+
   ],
-  providers: [],
+  providers: [AngularFireAuth,
+              AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

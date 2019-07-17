@@ -4,66 +4,70 @@
 
     <div class="col-2">
       <div class="etiquetas">
-          <span class="text-center">TIEMPO</span>
+        <span class="text-center">TIEMPO</span>
       </div>
 
       <app-cronometro2 class="text-center" #cronometro></app-cronometro2>
 
       <br>
+
       <div class="etiquetas">
-          <span class="etiquetas text-center">PUNTOS</span>
+        <span class="etiquetas text-center">PUNTOS</span>
       </div>
       <app-puntos [puntos]="puntos"></app-puntos>
     </div>
 
     <div class="col-8">
 
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
-            <div [ngClass]="{'confetti-piece': this.efecto === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
+      <div [ngClass]="{'confetti-piece': this.efectoGano === true}"></div>
 
 
       <div class="canvas" (click)="focusEnInput()">
 
         <div class="row">
           <div class="col-12">
-              <p class="text-center mt-10">{{this.juegoAnagrama.anagramaActual.palabras[0]}}</p>
+            <p class="text-center mt-10">{{this.juegoAnagrama.anagramaActual.palabras[0]}}</p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
-            <input type="text" class="text-center chalk-border" autofocus #palabraRespuesta (keydown.enter)="verificar()" [(ngModel)]="juegoAnagrama.respuesta">
+            <input type="text" class="text-center chalk-border" autofocus #palabraRespuesta
+              (keydown.enter)="verificar()" [(ngModel)]="juegoAnagrama.respuesta">
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
-            <p class="text-center" *ngIf="this.efectoGano" [ngClass]="{'focus-in-contract-bck': this.efectoGanar === true}">Ganaste!</p>
-            <p class="text-center" *ngIf="this.efectoPerdio" [ngClass]="{'focus-in-contract-bck': this.efectoPerdio === true}">Perdiste!</p>
+            <p class="text-center" *ngIf="this.efectoGano"
+              [ngClass]="{'focus-in-contract-bck': this.efectoGano === true}">Ganaste!</p>
+            <p class="text-center" *ngIf="this.efectoPerdio"
+              [ngClass]="{'focus-in-contract-bck': this.efectoPerdio === true}">Perdiste!</p>
           </div>
         </div>
 

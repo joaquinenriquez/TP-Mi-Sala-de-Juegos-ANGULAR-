@@ -41,10 +41,11 @@ export class AnagramasComponent implements OnInit {
       await this.delay(3000);
       this.puntos++;
       this.nuevoJuego();
-      this.cronometro.reset();
+      this.cronometro.pause();
       this.efectoGano = false;
       this.juegoAnagrama.respuesta = '';
       this.inputRespuesta.nativeElement.disabled = false;
+      this.cronometro.start();
       this.focusEnInput();
 
     } else {
@@ -56,6 +57,8 @@ export class AnagramasComponent implements OnInit {
       this.puntos--;
       this.efectoPerdio = false;
       this.inputRespuesta.nativeElement.disabled = false;
+      this.juegoAnagrama.respuesta = '';
+      this.cronometro.start();
       this.focusEnInput();
     }
   }
