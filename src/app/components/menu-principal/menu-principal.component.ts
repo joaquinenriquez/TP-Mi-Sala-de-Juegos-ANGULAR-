@@ -40,6 +40,7 @@ export class MenuPrincipalComponent implements OnInit {
     }
 
 
+
   constructor(private breakpointObserver: BreakpointObserver, private authService: AuthService, private afsAuth: AngularFireAuth) {}
 
 }

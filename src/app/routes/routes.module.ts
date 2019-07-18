@@ -10,6 +10,7 @@ import { Error404Component } from '../components/error404/error404.component';
 import { LoginComponent } from '../components/login/login.component';
 import { MiPongComponent } from '../components/mi-pong/mi-pong.component';
 import { RegistrarseComponent } from '../components/registrarse/registrarse.component';
+import { ListadoComponent } from '../components/listado/listado.component';
 
 const routes: Routes = [
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'aguilidad', component: AguilidadAritmeticaComponent },
   { path: 'tateti', component: TatetiComponent },
   { path: 'mijuego', component: MiPongComponent },
+  { path: 'listado', component: ListadoComponent },
   { path: '**', component: Error404Component}
 
 ];

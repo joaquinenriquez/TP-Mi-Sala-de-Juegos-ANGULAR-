@@ -56,6 +56,9 @@ import { MiPongComponent } from './components/mi-pong/mi-pong.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { ListadoComponent } from './components/listado/listado.component';
 
+// Grid
+import { AgGridModule } from 'ag-grid-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -106,7 +109,8 @@ import { ListadoComponent } from './components/listado/listado.component';
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AgGridModule.withComponents([])
 
   ],
   providers: [AngularFireAuth,

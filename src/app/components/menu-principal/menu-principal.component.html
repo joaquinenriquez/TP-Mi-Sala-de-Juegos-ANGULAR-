@@ -28,7 +28,7 @@
       <app-boton-login *ngIf="!this.isLogged" [routerLink]="['/login']" routerLinkActive="router-link-active" style="position: absolute; right: 10px;" [texto]="' ENTRAR'"></app-boton-login>
       <app-boton-login *ngIf="this.isLogged" [matMenuTriggerFor]="beforeMenu" routerLinkActive="router-link-active" style="position: absolute; right: 10px;" [texto]="' MI CUENTA'"></app-boton-login>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item>Puntos</button>
+        <button mat-menu-item [routerLink]="['/listado']" routerLinkActive="router-link-active">Puntos</button>
         <button mat-menu-item (click)="this.onLogout()" [routerLink]="['/login']" routerLinkActive="router-link-active">Salir</button>
       </mat-menu>
     </mat-toolbar>
@@ -37,3 +37,4 @@
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
