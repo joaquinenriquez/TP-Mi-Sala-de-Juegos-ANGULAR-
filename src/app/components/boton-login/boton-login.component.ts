@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { textBinding } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-boton-login',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boton-login.component.scss']
 })
 export class BotonLoginComponent implements OnInit {
+
+  @Input() texto: string;
 
   constructor() { }
 
