@@ -10,7 +10,7 @@
         <div class="inner" *ngIf="juego.mostrarInput">
           <div class="">
               <div class="miInput" [ngClass]="{'fade-in': this.juego.mostrarInput === true}">
-                  <input type="text" style="width: 150px" placeholder="numero" appSoloNumeros [(ngModel)]="juego.numeroIngresadoString" autofocus (keydown.enter)="verificar()" #inputNro>
+                  <input #inputNro type="text" style="width: 150px" placeholder="numero" appSoloNumeros [(ngModel)]="juego.numeroIngresadoString" autofocus (keydown.enter)="verificar()">
               </div>
           </div>
         </div>

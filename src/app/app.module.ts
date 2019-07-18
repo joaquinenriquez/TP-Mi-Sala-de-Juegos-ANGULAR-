@@ -53,6 +53,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { MiPongComponent } from './components/mi-pong/mi-pong.component';
+import { RegistrarseComponent } from './components/registrarse/registrarse.component';
+import { ListadoComponent } from './components/listado/listado.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +91,9 @@ import { MiPongComponent } from './components/mi-pong/mi-pong.component';
     PuntosComponent,
     Error404Component,
     LoginComponent,
-    MiPongComponent
+    MiPongComponent,
+    RegistrarseComponent,
+    ListadoComponent
 
   ],
   imports: [

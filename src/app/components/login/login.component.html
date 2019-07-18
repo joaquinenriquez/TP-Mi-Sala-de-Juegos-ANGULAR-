@@ -1,15 +1,24 @@
 <div class="container">
-    <div class="card card-container">
-        <img id="profile-img" class="profile-img-card" src="../../../assets/img/logos/Logos-utngames/logo-utngames-solo.png">
-        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
-        <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
-            <span id="reauth-email" class="reauth-email"></span>
-            <input [(ngModel)]="this.email" type="email" id="inputEmail" class="form-control" placeholder="Usuario" required autofocus name="email">
-            <input [(ngModel)]="this.password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required name="password">
-            <div class="div"></div>
+  <div class="card card-container">
+    <img id="profile-img" class="profile-img-card"
+      src="../../../assets/img/logos/Logos-utngames/logo-utngames-solo.png">
+    <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+    <p id="profile-name" class="profile-name-card"></p>
+    <form class="form-signin">
+      <h3 class="text-center">Login</h3>
+      <span id="reauth-email" class="reauth-email"></span>
+      <input [(ngModel)]="this.email" type="email" id="inputEmail" class="form-control" placeholder="Usuario" required
+        autofocus name="email">
+      <input [(ngModel)]="this.password" type="password" id="inputPassword" class="form-control"
+        placeholder="Contraseña" required name="password">
+      <div class="div"></div>
 
-            <button class="btn btn-lg btn-success btn-block btn-signin mt-5" type="submit" (click)="onLogin()">Iniciar Sesión</button>
-        </form><!-- /form -->
-    </div><!-- /card-container -->
+      <button class="btn btn-lg btn-success btn-block btn-signin mt-5" type="submit" (click)="onLogin()">Iniciar
+        Sesión</button>
+
+        <button [routerLink]="['/registrarse']" routerLinkActive="router-link-active" class="btn btn-lg btn-info btn-block btn-signin" type="submit" (click)="onLogin()">Registrarse</button>
+
+        <button class="btn btn-lg btn-secondary btn-block btn-signin" type="submit" (click)="onLogin()">Login test</button>
+    </form><!-- /form -->
+  </div><!-- /card-container -->
 </div><!-- /container -->

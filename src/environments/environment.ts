@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: 'AIzaSyDFaaOWamkO_xRaJBxKq07oE78wxwnUc_8',
-    authDomain: 'saladejuegos2-714c3.firebaseapp.com',
-    databaseURL: 'https://saladejuegos2-714c3.firebaseio.com',
-    projectId: 'saladejuegos2-714c3',
-    storageBucket: 'saladejuegos2-714c3.appspot.com',
-    messagingSenderId: '516927930203',
-    appId: '1:516927930203:web:301500de667f2956'
+    apiKey: "AIzaSyDFaaOWamkO_xRaJBxKq07oE78wxwnUc_8",
+    authDomain: "saladejuegos2-714c3.firebaseapp.com",
+    databaseURL: "https://saladejuegos2-714c3.firebaseio.com",
+    projectId: "saladejuegos2-714c3",
+    storageBucket: "saladejuegos2-714c3.appspot.com",
+    messagingSenderId: "516927930203",
+    appId: "1:516927930203:web:301500de667f2956"
   }
 };
 

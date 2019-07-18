@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { JuegoAdivina } from 'src/app/class/juego-adivina';
+import { EstadisticaJuego } from 'src/app/class/estadistica-juego';
+import { ConexionDbService } from 'src/app/services/conexion-db.service';
+import { ILibro } from 'src/app/class/ilibro';
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -12,7 +15,7 @@ export class AdivinaElNumeroComponent implements AfterViewInit, OnInit {
   contador = 0;
   @ViewChild('inputNro') inputNumeroIngresado: ElementRef;
 
-  constructor() {
+  constructor(private dataApi: ConexionDbService) {
     this.juego.mensaje1 = 'Hola! Queres jugar?';
     this.juego.mensaje2 = 'COMENZAR';
   }
@@ -78,14 +81,14 @@ export class AdivinaElNumeroComponent implements AfterViewInit, OnInit {
     if (this.juego.estado === 'esperando') {
       this.juego.nuevoJuego();
       this.contador = 0;
-      setTimeout(() => this.inputNumeroIngresado.nativeElement.focus(), 1000);
+      //setTimeout(() => this.inputNumeroIngresado.nativeElement.focus(), 1000);
     }
   }
 
   ngAfterViewInit() {
     console.log('afterinit');
     setTimeout(() => {
-      this.inputNumeroIngresado.nativeElement.focus();
+      //this.inputNumeroIngresado.nativeElement.focus();
     }, 1000);
   }
 }
